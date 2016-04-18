@@ -5,8 +5,6 @@ language_tabs:
   - shell
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 
 search: true
@@ -14,34 +12,26 @@ search: true
 
 # Introduction
 
-Welcome to the MailNode API! You can use our API to access MailNode API endpoints, which can get information on various cats, campaigns, and breeds in our database.
+Welcome to the MailNode API!
 
-We have language bindings in Shell! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+You can view code examples in the dark area to the right.
 
 # Authentication
 
 > To authorize, use this code:
 
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "http://api.mailnode.io/"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: Basic yourKey"
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+MailNode uses Authorization credentials to allow access to the API.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-MailNode expects for the API key to be included in all API requests to the server in a header that looks like the following:
+MailNode expects for the Authorization credentials to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: Basic yourKey`
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
 
 # Campaigns
 
@@ -49,10 +39,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 
 ```shell
-curl "http://api.mailnode.io/campaigns"
-  -H "yourEmail"
-  -H "yourPassword"
-  -H "Authorization: Basic yourKey"
+curl -u your@Email:yourPassword api.mailnode.io/campaigns
 ```
 
 > The above command returns JSON structured like this:
@@ -297,14 +284,8 @@ The MailNode API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks
-401 | Unauthorized -- Your API key is wrong
-403 | Forbidden -- The kitten requested is hidden for administrators only
+401 | Unauthorized -- Your authorization params are invalid
 404 | Campaign Not Found -- The specified campaign could not be found
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method
-406 | Not Acceptable -- You requested a format that isn't json
-410 | Gone -- The kitten requested has been removed from our servers
-418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
+405 | Method Not Allowed -- You tried to access a campaign with an invalid method
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
