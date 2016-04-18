@@ -1,20 +1,248 @@
 # Templates
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+## Get All Templates
 
-The Kittn API uses the following error codes:
+
+```shell
+
+curl -u your@Email:yourPassword "http://api.mailnode.io/templates"
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "token": "q1JjBxyE85RTm06coPAslNAvQTlhdbmJ",
+      "name": "Dummy template",
+      "content": "Qui aliquid harum officiis aliquam. Quidem qui excepturi modi aut. Non ut voluptatum est eos quod.",
+      "created_at": "April 18, 2016 12:41 PM"
+    },
+    {
+      "token": "MAoQU8b7QZ3Iyv0XkOmma2MWH4AYVXBx",
+      "name": "Dummy template",
+      "content": "Dolor iste minus facilis reprehenderit voluptas expedita. Et officia rerum mollitia quasi quam ut. Facilis commodi ut suscipit omnis. Consequuntur labore recusandae odit eos.",
+      "created_at": "April 18, 2016 8:48 AM"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "total": 2,
+      "count": 2,
+      "per_page": 25,
+      "current_page": 1,
+      "total_pages": 1,
+      "links": []
+    }
+  }
+}
+```
+
+This endpoint retrieves all templates.
+
+### HTTP Request
+
+`GET http://api.mailnode.io/templates`
+
+
+
+## Get a Specific Template
+
+```shell
+
+curl -u your@Email:yourPassword "http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": {
+    "token": "MAoQU8b7QZ3Iyv0XkOmma2MWH4AYVXBx",
+    "name": "Dummy template",
+    "content": "Dolor iste minus facilis reprehenderit voluptas expedita. Et officia rerum mollitia quasi quam ut. Facilis commodi ut suscipit omnis. Consequuntur labore recusandae odit eos.",
+    "created_at": "April 18, 2016 8:48 AM"
+  }
+}
+```
+
+This endpoint retrieves a specific template.
+
+### HTTP Request
+
+`GET http://api.mailnode.io/templates/<templateToken>`
+
+### Request Body Parameters
+
+Parameter | Description
+--------- | -----------
+templateToken | The token of the template to retrieve
+
+
+## Update a Template
+
+```shell
+
+curl -X PATCH
+-d
+'name=UpdatedTemplateName&
+subject=UpdatedSubjectTemplate&
+from_email=UpdatedfromSomeone@example.com&
+from_name=exampleFromName'
+
+-u your@Email:yourPassword
+"http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "name": "UpdatedTemplateName",
+    "subject": "UpdatedSubjectTemplate",
+    "from_name": "UpdatedfromExampleName",
+    "from_email": "UpdatedfromSomeone@example.com",
+    "opens": 0,
+    "clicks": 0,
+    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
+    "sent_emails": 0,
+    "created_at": {
+        "date": "2016-04-15 09:59:59.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+    }
+}
+```
+
+This endpoint updates a specific template.
+
+### HTTP Request
+
+`PATCH http://api.mailnode.io/templates/<templateToken>`
+
+### Request Body Parameters
+
+Parameter | Description
+--------- | -----------
+templateToken | The token of the template to update
+name | The name of the template
+template | Template token of new template
+list | List token of new template
+subject | Subject text
+from_email| Sender email
+from_name | Sender name
+
+Optional Parameters | Description
+------------------- | -----------
+send_time_start | Starting time of email sending
+send_time_end |Starting time of email sending
+
+## Create a Template
+
+```shell
+
+curl -X POST
+-d
+'name=NewTemplateName&
+subject=NewSubjectTemplate&
+from_email=fromSomeone@example.com&
+from_name=fromExampleName&
+template=yourTemplateToken&
+list=yourListToken'
+
+-u your@Email:yourPassword
+"http://api.mailnode.io/templates/"
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "name": "NewTemplateName",
+    "subject": "NewSubjectTemplate",
+    "from_name": "fromExampleName",
+    "from_email": "fromSomeone@example.com",
+    "opens": 0,
+    "clicks": 0,
+    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
+    "sent_emails": 0,
+    "created_at": {
+        "date": "2016-04-15 09:59:59.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+    }
+}
+```
+
+This endpoint creates new template.
+
+### HTTP Request
+
+`POST http://api.mailnode.io/templates`
+
+### Request Body Parameters
+
+Parameter | Description
+--------- | -----------
+name | The name of the template
+template | Template token of new template
+list | List token of new template
+subject | Subject text
+from_email| Sender email
+from_name | Sender name
+
+Optional Parameters | Description
+------------------- | -----------
+send_time_start | Starting time of email sending
+send_time_end |Starting time of email sending
+
+## Delete a Template
+
+```shell
+
+curl -X DELETE
+-u your@Email:yourPassword
+"http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "message": "Template deleted successfully!",
+  "status_code": 200
+}
+```
+
+This endpoint deletes a specific template.
+
+### HTTP Request
+
+`DELETE http://api.mailnode.io/templates/<templateToken>`
+
+### Request Body Parameters
+
+Parameter | Description
+--------- | -----------
+templateToken | The token of the template to delete
+
+
+## Template Errors
+
+The MailNode API uses the following error codes:
 
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request sucks
-401 | Unauthorized -- Your API key is wrong
-403 | Forbidden -- The kitten requested is hidden for administrators only
-404 | Not Found -- The specified kitten could not be found
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method
-406 | Not Acceptable -- You requested a format that isn't json
-410 | Gone -- The kitten requested has been removed from our servers
-418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
+401 | Unauthorized -- Your authorization params are invalid
+404 | Template Not Found -- The specified template could not be found
+405 | Method Not Allowed -- You tried to access a template with an invalid method
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
