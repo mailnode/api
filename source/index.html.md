@@ -24,12 +24,11 @@ You can view code examples in the dark area to the right.
 > To authorize, use this code:
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "http://api.mailnode.io/"
-  -H "Authorization: Basic yourKey"
+# With shell, each request has to have correct credentials before accessing the api
+curl -u example@mail.com:yourpassword "http://api.mailnode.io"
 ```
 
-MailNode uses Basic Authorization credentials to allow access to the API.
+MailNode uses Basic Authorization to allow access to the API.
 
 MailNode expects for the Authorization credentials to be included in all API requests to the server in a header that looks like the following:
 
