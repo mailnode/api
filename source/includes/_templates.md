@@ -89,10 +89,7 @@ templateToken | The token of the template to retrieve
 curl -X PATCH
 -d
 'name=UpdatedTemplateName&
-subject=UpdatedSubjectTemplate&
-from_email=UpdatedfromSomeone@example.com&
-from_name=exampleFromName'
-
+content=Updated Template Content&
 -u your@Email:yourPassword
 "http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
@@ -102,19 +99,12 @@ from_name=exampleFromName'
 
 ```json
 {
+  "data": {
+    "token": "MAoQU8b7QZ3Iyv0XkOmma2MWH4AYVXBx",
     "name": "UpdatedTemplateName",
-    "subject": "UpdatedSubjectTemplate",
-    "from_name": "UpdatedfromExampleName",
-    "from_email": "UpdatedfromSomeone@example.com",
-    "opens": 0,
-    "clicks": 0,
-    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-    "sent_emails": 0,
-    "created_at": {
-        "date": "2016-04-15 09:59:59.000000",
-        "timezone_type": 3,
-        "timezone": "UTC"
-    }
+    "content": "Updated Template Content",
+    "created_at": "April 18, 2016 8:48 AM"
+  }
 }
 ```
 
@@ -130,16 +120,8 @@ Parameter | Description
 --------- | -----------
 templateToken | The token of the template to update
 name | The name of the template
-template | Template token of new template
-list | List token of new template
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
+content | Template content
 
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
 
 ## Create a Template
 
@@ -148,14 +130,9 @@ send_time_end |Starting time of email sending
 curl -X POST
 -d
 'name=NewTemplateName&
-subject=NewSubjectTemplate&
-from_email=fromSomeone@example.com&
-from_name=fromExampleName&
-template=yourTemplateToken&
-list=yourListToken'
-
+content=New Template Content&
 -u your@Email:yourPassword
-"http://api.mailnode.io/templates/"
+"http://api.mailnode.io/templates"
 
 ```
 
@@ -163,19 +140,12 @@ list=yourListToken'
 
 ```json
 {
+  "data": {
+    "token": "MAoQU8b7QZ3Iyv0XkOmma2MWH4AYVXBx",
     "name": "NewTemplateName",
-    "subject": "NewSubjectTemplate",
-    "from_name": "fromExampleName",
-    "from_email": "fromSomeone@example.com",
-    "opens": 0,
-    "clicks": 0,
-    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-    "sent_emails": 0,
-    "created_at": {
-        "date": "2016-04-15 09:59:59.000000",
-        "timezone_type": 3,
-        "timezone": "UTC"
-    }
+    "content": "New Template Content",
+    "created_at": "April 18, 2016 8:48 AM"
+  }
 }
 ```
 
