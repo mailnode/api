@@ -39,7 +39,9 @@ MailNode expects for the Authorization credentials to be included in all API req
 
 
 ```shell
-curl -u your@Email:yourPassword api.mailnode.io/campaigns
+
+curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns"
+
 ```
 
 > The above command returns JSON structured like this:
@@ -104,10 +106,9 @@ This endpoint retrieves all campaigns.
 ## Get a Specific Campaign
 
 ```shell
-curl "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
--H "yourEmail"
--H "yourPassword"
--H "Authorization: Basic yourKey"
+
+curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+
 ```
 
 > The above command returns JSON structured like this:
@@ -146,10 +147,9 @@ campaignToken | The token of the campaign to retrieve
 ## Update a Campaign
 
 ```shell
-curl "http://example.com/api/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
--H "yourEmail"
--H "yourPassword"
--H "Authorization: Basic yourKey"
+
+curl -X PATCH -d 'name=exampleName&subject=exampleSubject&from_email=example@mail.com&from_name=exampleFromName' -u your@Email:yourPassword "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+
 ```
 
 > The above command returns JSON structured like this:
