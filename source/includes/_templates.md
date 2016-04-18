@@ -159,17 +159,10 @@ This endpoint creates new template.
 
 Parameter | Description
 --------- | -----------
+templateToken | The token of the template to update
 name | The name of the template
-template | Template token of new template
-list | List token of new template
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
+content | Template content
 
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
 
 ## Delete a Template
 
