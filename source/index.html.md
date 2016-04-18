@@ -4,8 +4,10 @@ title: API Reference
 language_tabs:
   - shell
 
-toc_footers:
-
+includes:
+  - lists
+  - templates
+  - reports
 
 search: true
 ---
