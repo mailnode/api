@@ -26,11 +26,11 @@ curl "http://api.mailnode.io/"
   -H "Authorization: Basic yourKey"
 ```
 
-MailNode uses Authorization credentials to allow access to the API.
+MailNode uses Basic Authorization credentials to allow access to the API.
 
 MailNode expects for the Authorization credentials to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: Basic yourKey`
+`curl -u your@email:yourpassword "http://api.mailnode.io"`
 
 
 # Campaigns
@@ -148,7 +148,15 @@ campaignToken | The token of the campaign to retrieve
 
 ```shell
 
-curl -X PATCH -d 'name=exampleName&subject=exampleSubject&from_email=example@mail.com&from_name=exampleFromName' -u your@Email:yourPassword "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+curl -X PATCH
+-d
+'name=UpdatedCampaignName&
+subject=UpdatedSubjectCampaign&
+from_email=UpdatedfromSomeone@example.com&
+from_name=exampleFromName'
+
+-u your@Email:yourPassword
+"http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
 
@@ -198,10 +206,19 @@ send_time_end |Starting time of email sending
 ## Create a Campaign
 
 ```shell
-curl "http://example.com/api/campaigns"
--H "yourEmail"
--H "yourPassword"
--H "Authorization: Basic yourKey"
+
+curl -X POST
+-d
+'name=NewCampaignName&
+subject=NewSubjectCampaign&
+from_email=fromSomeone@example.com&
+from_name=fromExampleName&
+template=yourTemplateToken&
+list=yourListToken'
+
+-u your@Email:yourPassword
+"http://api.mailnode.io/campaigns/"
+
 ```
 
 > The above command returns JSON structured like this:
@@ -249,10 +266,12 @@ send_time_end |Starting time of email sending
 ## Delete a Campaign
 
 ```shell
-curl "http://example.com/api/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
--H "yourEmail"
--H "yourPassword"
--H "Authorization: Basic yourKey"
+
+curl -X DELETE
+-u your@Email:yourPassword
+"http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+
+
 ```
 
 > The above command returns JSON structured like this:
