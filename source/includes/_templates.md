@@ -130,7 +130,7 @@ content | Template content
 curl -X POST
 -d
 'name=NewTemplateName&
-content=New Template Content&
+content=New Template Content&'
 -u your@Email:yourPassword
 "http://api.mailnode.io/templates"
 

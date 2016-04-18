@@ -5,7 +5,7 @@
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns"
+curl -u your@Email:yourPassword "http://api.mailnode.io/lists/<listToken>/members"
 
 ```
 
@@ -13,176 +13,141 @@ curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns"
 
 ```json
 {
-    "data": [
-        {
-            "name": "CampaignName1",
-            "subject": "SubjectCampaign1",
-            "from_name": "fromExampleName",
-            "from_email": "fromSomeone@example.com",
-            "opens": 12,
-            "clicks": 10,
-            "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-            "sent_emails": 20,
-            "created_at": {
-                "date": "2016-04-15 09:59:59.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "name": "CampaignName2",
-            "subject": "SubjectCampaign2",
-            "from_name": "fromExampleName",
-            "from_email": "fromSomeone@example.com",
-            "opens": 12,
-            "clicks": 10,
-            "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-            "sent_emails": 200,
-            "created_at": {
-                "date": "2016-04-15 09:59:59.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        }
-    ],
-    "meta": {
-        "pagination": {
-            "total": 4,
-            "count": 2,
-            "per_page": 2,
-            "current_page": 1,
-            "total_pages": 2,
-            "links": {
-                "next": "http://api.mailnode.app/campaigns?page=2"
-            }
-        }
+  "data": [
+    {
+      "email": "user1@mail.com",
+      "first_name": "ExampleFirstName1",
+      "last_name": "ExampleSecondName1",
+      "token": "g3dpPqTtNdarFoNq17iwpqxZojJI65aW"
+    },
+    {
+      "email": "user2@mail.com",
+      "first_name": "ExampleFirstName2",
+      "last_name": "ExampleSecondName2",
+      "token": "c1hlGSPl2H0eHICfGb40mcEI1yyIQ1w8"
     }
+  ],
+  "meta": {
+    "pagination": {
+      "total": 2,
+      "count": 2,
+      "per_page": 25,
+      "current_page": 1,
+      "total_pages": 1,
+      "links": []
+    }
+  }
 }
 ```
 
-This endpoint retrieves all campaigns.
+This endpoint retrieves all members.
 
 ### HTTP Request
 
-`GET http://api.mailnode.io/campaigns`
-
-
-
-## Get a Specific Campaign
-
-```shell
-
-curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
-
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-    "name": "CampaignName",
-    "subject": "SubjectCampaign",
-    "from_name": "fromExampleName",
-    "from_email": "fromSomeone@example.com",
-    "opens": 0,
-    "clicks": 0,
-    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-    "sent_emails": 0,
-    "created_at": {
-        "date": "2016-04-15 09:59:59.000000",
-        "timezone_type": 3,
-        "timezone": "UTC"
-    }
-}
-```
-
-This endpoint retrieves a specific campaign.
-
-### HTTP Request
-
-`GET http://api.mailnode.io/campaigns/<campaignToken>`
+`GET http://api.mailnode.io/lists/<listToken>/members`
 
 ### Request Body Parameters
 
 Parameter | Description
 --------- | -----------
-campaignToken | The token of the campaign to retrieve
+listToken | The token of the list of which members to retrieve
+
+## Get a Specific Member
+
+```shell
+
+curl -u your@Email:yourPassword "http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+{
+  "data": {
+      "email": "user1@mail.com",
+      "first_name": "ExampleFirstName1",
+      "last_name": "ExampleSecondName1",
+      "token": "g3dpPqTtNdarFoNq17iwpqxZojJI65aW"
+    }
+}
+
+```
+
+This endpoint retrieves a specific member.
+
+### HTTP Request
+
+`GET http://api.mailnode.io/lists/<listToken>/members/<memberToken>`
+
+### Request Body Parameters
+
+Parameter | Description
+--------- | -----------
+listToken | The token of the list of which members to retrieve
+memberToken | The token of the member to retrieve
 
 
-## Update a Campaign
+## Update a Member
 
 ```shell
 
 curl -X PATCH
 -d
-'name=UpdatedCampaignName&
-subject=UpdatedSubjectCampaign&
-from_email=UpdatedfromSomeone@example.com&
-from_name=exampleFromName'
+'email=updateUser@mail.com&
+first_name=updateFirstName&
+last_name=updateLastName'
 
 -u your@Email:yourPassword
-"http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+"http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
 
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
+
 {
-    "name": "UpdatedCampaignName",
-    "subject": "UpdatedSubjectCampaign",
-    "from_name": "UpdatedfromExampleName",
-    "from_email": "UpdatedfromSomeone@example.com",
-    "opens": 0,
-    "clicks": 0,
-    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-    "sent_emails": 0,
-    "created_at": {
-        "date": "2016-04-15 09:59:59.000000",
-        "timezone_type": 3,
-        "timezone": "UTC"
+  "data": {
+      "email": "updateUser@mail.com",
+      "first_name": "updateFirstName",
+      "last_name": "updateLastName",
+      "token": "g3dpPqTtNdarFoNq17iwpqxZojJI65aW"
     }
 }
+
 ```
 
-This endpoint updates a specific campaign.
+This endpoint updates a specific member.
 
 ### HTTP Request
 
-`PATCH http://api.mailnode.io/campaigns/<campaignToken>`
+`PATCH http://api.mailnode.io/lists/<listToken>/members/<memberToken>`
 
 ### Request Body Parameters
 
 Parameter | Description
 --------- | -----------
-campaignToken | The token of the campaign to update
-name | The name of the campaign
-template | Template token of new campaign
-list | List token of new campaign
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
+listToken | The token of the list of which members to retrieve
+memberToken | The token of the member to retrieve
+first_name | The first name of the member
+last_name | The last name of the member
+email | The email of the member
 
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
 
-## Create a Campaign
+## Create a Member
 
 ```shell
 
 curl -X POST
 -d
-'name=NewCampaignName&
-subject=NewSubjectCampaign&
-from_email=fromSomeone@example.com&
-from_name=fromExampleName&
-template=yourTemplateToken&
-list=yourListToken'
+'email=newUser@mail.com&
+first_name=FirstName&
+last_name=LastName'
 
 -u your@Email:yourPassword
-"http://api.mailnode.io/campaigns/"
+"http://api.mailnode.io/members/"
 
 ```
 
@@ -190,51 +155,39 @@ list=yourListToken'
 
 ```json
 {
-    "name": "NewCampaignName",
-    "subject": "NewSubjectCampaign",
-    "from_name": "fromExampleName",
-    "from_email": "fromSomeone@example.com",
-    "opens": 0,
-    "clicks": 0,
-    "token": "HNzrB6QmB7Z8I2x0TjzYcC7aSvCiy2r2",
-    "sent_emails": 0,
-    "created_at": {
-        "date": "2016-04-15 09:59:59.000000",
-        "timezone_type": 3,
-        "timezone": "UTC"
+  "data": {
+      "email": "newUser@mail.com",
+      "first_name": "FirstName",
+      "last_name": "LastName",
+      "token": "g3dpPqTtNdarFoNq17iwpqxZojJI65aW"
     }
 }
 ```
 
-This endpoint creates new campaign.
+This endpoint creates new member.
 
 ### HTTP Request
 
-`POST http://api.mailnode.io/campaigns`
+`POST http://api.mailnode.io/lists/<listToken>/members/<memberToken>`
 
 ### Request Body Parameters
 
 Parameter | Description
 --------- | -----------
-name | The name of the campaign
-template | Template token of new campaign
-list | List token of new campaign
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
+listToken | The token of the list of which members to retrieve
+memberToken | The token of the member to retrieve
+first_name | The first name of the member
+last_name | The last name of the member
+email | The email of the member
 
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
 
-## Delete a Campaign
+## Delete a Member
 
 ```shell
 
 curl -X DELETE
 -u your@Email:yourPassword
-"http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+"http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
 
 
 ```
@@ -243,25 +196,26 @@ curl -X DELETE
 
 ```json
 {
-  "message": "Campaign deleted successfully!",
+  "message": "Member deleted successfully!",
   "status_code": 200
 }
 ```
 
-This endpoint deletes a specific campaign.
+This endpoint deletes a specific member.
 
 ### HTTP Request
 
-`DELETE http://api.mailnode.io/campaigns/<campaignToken>`
+`DELETE http://api.mailnode.io/lists/<listToken>/members/<memberToken>`
 
 ### Request Body Parameters
 
 Parameter | Description
 --------- | -----------
-campaignToken | The token of the campaign to delete
+listToken | The token of the list of which members to retrieve
+memberToken | The token of the member to delete
 
 
-## Campaign Errors
+## Member Errors
 
 The MailNode API uses the following error codes:
 
@@ -269,7 +223,7 @@ The MailNode API uses the following error codes:
 Error Code | Meaning
 ---------- | -------
 401 | Unauthorized -- Your authorization params are invalid
-404 | Campaign Not Found -- The specified campaign could not be found
-405 | Method Not Allowed -- You tried to access a campaign with an invalid method
+404 | Member Not Found -- The specified member could not be found
+405 | Method Not Allowed -- You tried to access a member with an invalid method
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
