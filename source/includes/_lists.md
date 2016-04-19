@@ -151,16 +151,13 @@ Parameter | Description
 --------- | -----------
 listToken | The token of the list to update
 name | The name of the list
-template | Template token of new list
-list | List token of new list
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
-
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
+default_from_name | Default sender name
+default_from_email | Default sender email
+default_list_reminder | List reminder
+company| Company name
+zip_code | Company address zip code
+phone | Company phone
+country_id | Country id
 
 ## Create a List
 
@@ -211,49 +208,16 @@ This endpoint creates new list.
 
 Parameter | Description
 --------- | -----------
+listToken | The token of the list to update
 name | The name of the list
-template | Template token of new list
-list | List token of new list
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
+default_from_name | Default sender name
+default_from_email | Default sender email
+default_list_reminder | List reminder
+company| Company name
+zip_code | Company address zip code
+phone | Company phone
+country_id | Country id
 
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
-
-## Delete a List
-
-```shell
-
-curl -X DELETE
--u your@Email:yourPassword
-"http://api.mailnode.io/lists/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
-
-
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "message": "List deleted successfully!",
-  "status_code": 200
-}
-```
-
-This endpoint deletes a specific list.
-
-### HTTP Request
-
-`DELETE http://api.mailnode.io/lists/<listToken>`
-
-### Request Body Parameters
-
-Parameter | Description
---------- | -----------
-listToken | The token of the list to delete
 
 
 ## List Errors
