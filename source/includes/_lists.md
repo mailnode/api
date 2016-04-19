@@ -5,7 +5,7 @@
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/lists"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/lists"
 
 ```
 
@@ -64,7 +64,7 @@ This endpoint retrieves all lists.
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/lists/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/lists/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
 
@@ -115,7 +115,7 @@ zip_code=exampleZipCode&
 phone=examplePhone&
 country_id=exampleCountryId'
 
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/lists/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
@@ -174,7 +174,7 @@ zip_code=exampleZipCode&
 phone=examplePhone&
 country_id=exampleCountryId'
 
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/lists/"
 
 ```

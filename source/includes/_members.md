@@ -5,7 +5,7 @@
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/lists/<listToken>/members"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/lists/<listToken>/members"
 
 ```
 
@@ -56,7 +56,7 @@ listToken | The token of the list of which members to retrieve
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
 
 ```
 
@@ -99,7 +99,7 @@ curl -X PATCH
 first_name=updateFirstName&
 last_name=updateLastName'
 
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
 
 ```
@@ -146,7 +146,7 @@ curl -X POST
 first_name=FirstName&
 last_name=LastName'
 
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/members/"
 
 ```
@@ -186,7 +186,7 @@ email | The email of the member
 ```shell
 
 curl -X DELETE
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/lists/<listToken>/members/<memberToken>"
 
 

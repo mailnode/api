@@ -5,7 +5,7 @@
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/templates"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/templates"
 
 ```
 
@@ -52,7 +52,7 @@ This endpoint retrieves all templates.
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
 
@@ -90,7 +90,7 @@ curl -X PATCH
 -d
 'name=UpdatedTemplateName&
 content=Updated Template Content&
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
@@ -131,7 +131,7 @@ curl -X POST
 -d
 'name=NewTemplateName&
 content=New Template Content&'
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/templates"
 
 ```
@@ -169,7 +169,7 @@ content | Template content
 ```shell
 
 curl -X DELETE
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/templates/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 

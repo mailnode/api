@@ -6,7 +6,7 @@
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/reports"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/reports"
 
 ```
 
@@ -63,7 +63,7 @@ This endpoint retrieves all Reports.
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/reports/campaign/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/reports/campaign/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
 

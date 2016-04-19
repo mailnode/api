@@ -23,16 +23,20 @@ You can view code examples in the dark area to the right.
 
 > To authorize, use this code:
 
+
 ```shell
-# With shell, each request has to have correct credentials before accessing the api
-curl -u example@mail.com:yourpassword "http://api.mailnode.io"
+# With shell, you can just pass the correct header with each request
+curl "http://api.mailnode.io/"
+  -H "Authorization: Bearer yourApiKey"
 ```
 
-MailNode uses Basic Authorization to allow access to the API.
+> Make sure to replace `yourApiKey` with your API key.
 
-MailNode expects for the Authorization credentials to be included in all API requests to the server in a header that looks like the following:
+MailNode uses API keys to allow access to the API. You can register a new MailNode API key at our [settings panel](http://mailnode.io/panel/settings).
 
-`curl -u your@email:yourpassword "http://api.mailnode.io"`
+MailNode expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: Bearer yourApiKey`
 
 
 # Campaigns
@@ -42,7 +46,9 @@ MailNode expects for the Authorization credentials to be included in all API req
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns"
+curl "http://api.mailnode.io/campaigns"
+-H "Authorization: Bearer yourApiKey"
+
 
 ```
 
@@ -109,7 +115,7 @@ This endpoint retrieves all campaigns.
 
 ```shell
 
-curl -u your@Email:yourPassword "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
+curl -H "Authorization: Bearer yourApiKey" "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
 
@@ -157,7 +163,7 @@ subject=UpdatedSubjectCampaign&
 from_email=UpdatedfromSomeone@example.com&
 from_name=exampleFromName'
 
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 ```
@@ -218,7 +224,7 @@ from_name=fromExampleName&
 template=yourTemplateToken&
 list=yourListToken'
 
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/campaigns/"
 
 ```
@@ -270,7 +276,7 @@ send_time_end |Starting time of email sending
 ```shell
 
 curl -X DELETE
--u your@Email:yourPassword
+-H "Authorization: Bearer yourApiKey"
 "http://api.mailnode.io/campaigns/oRR21ykSBXhMDcZTCZWdEJxZSrBjuTBt"
 
 
