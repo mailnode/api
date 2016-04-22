@@ -97,7 +97,7 @@ This endpoint retrieves a specific list.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list to retrieve
+listToken | string | The token of the list to retrieve | true
 
 
 ## Update a List
@@ -149,15 +149,15 @@ This endpoint updates a specific list.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list to update
-name | The name of the list
-default_from_name | Default sender name
-default_from_email | Default sender email
-default_list_reminder | List reminder
-company| Company name
-zip_code | Company address zip code
-phone | Company phone
-country_id | Country id
+listToken | string | The token of the list to update | true
+name | string | The name of the list | false
+default_from_name | string | Default sender name | false
+default_from_email | string | Default sender email | false
+default_list_reminder | text | List reminder | false
+company| string | Company name | false
+zip_code | string | Company address zip code | false
+phone | string | Company phone | false
+country_id | integer | Country id | false
 
 ## Create a List
 
@@ -208,15 +208,15 @@ This endpoint creates new list.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list to update
-name | The name of the list
-default_from_name | Default sender name
-default_from_email | Default sender email
-default_list_reminder | List reminder
-company| Company name
-zip_code | Company address zip code
-phone | Company phone
-country_id | Country id
+listToken | string | The token of the list to update | true
+name | string | The name of the list | true
+default_from_name | string | Default sender name | false
+default_from_email | string | Default sender email | false
+default_list_reminder | text | List reminder | false
+company| string | Company name | false
+zip_code | string | Company address zip code | false
+phone | string | Company phone | false
+country_id | integer | Country id | false
 
 
 
