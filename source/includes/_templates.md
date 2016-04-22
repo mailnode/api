@@ -79,7 +79,7 @@ This endpoint retrieves a specific template.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-templateToken | The token of the template to retrieve
+templateToken | string | The token of the template to retrieve | true
 
 
 ## Update a Template
@@ -118,9 +118,9 @@ This endpoint updates a specific template.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-templateToken | The token of the template to update
-name | The name of the template
-content | Template content
+templateToken | string | The token of the template to update | true
+name | string | The name of the template | true
+content | longText | Template content | true
 
 
 ## Create a Template
@@ -159,9 +159,9 @@ This endpoint creates new template.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-templateToken | The token of the template to update
-name | The name of the template
-content | Template content
+templateToken | string | The token of the template to update | true
+name | string | The name of the template | true
+content | longText | Template content | true
 
 
 ## Delete a Template
@@ -194,7 +194,7 @@ This endpoint deletes a specific template.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-templateToken | The token of the template to delete
+templateToken | string | The token of the template to delete | true
 
 
 ## Template Errors

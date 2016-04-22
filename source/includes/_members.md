@@ -50,7 +50,7 @@ This endpoint retrieves all members.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list of which members to retrieve
+listToken | string | The token of the list of which members to retrieve | true
 
 ## Get a Specific Member
 
@@ -85,8 +85,8 @@ This endpoint retrieves a specific member.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list of which members to retrieve
-memberToken | The token of the member to retrieve
+listToken | string | The token of the list of which members to retrieve | true
+memberToken | string | The token of the member to retrieve | true
 
 
 ## Update a Member
@@ -129,11 +129,11 @@ This endpoint updates a specific member.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list of which members to retrieve
-memberToken | The token of the member to retrieve
-first_name | The first name of the member
-last_name | The last name of the member
-email | The email of the member
+listToken | string | The token of the list of which members to retrieve | true
+memberToken | string | The token of the member to retrieve | true
+first_name | string | The first name of the member | false
+last_name | string | The last name of the member | false
+email | string | The email of the member | true
 
 
 ## Create a Member
@@ -174,11 +174,11 @@ This endpoint creates new member.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list of which members to retrieve
-memberToken | The token of the member to retrieve
-first_name | The first name of the member
-last_name | The last name of the member
-email | The email of the member
+listToken | string | The token of the list of which members to retrieve | true
+memberToken | string | The token of the member to retrieve | true
+first_name | string | The first name of the member | false
+last_name | string | The last name of the member | false
+email | string | The email of the member | true
 
 
 ## Delete a Member
@@ -211,8 +211,8 @@ This endpoint deletes a specific member.
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-listToken | The token of the list of which members to retrieve
-memberToken | The token of the member to delete
+listToken | string | The token of the list of which members to retrieve | true
+memberToken | string | The token of the member to delete | true
 
 
 ## Member Errors

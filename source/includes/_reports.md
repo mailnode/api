@@ -112,13 +112,13 @@ This endpoint retrieves a specific Report.
 
 ### HTTP Request
 
-`GET http://api.mailnode.io/reports/campaign/<CampaignToken>`
+`GET http://api.mailnode.io/reports/campaign/<campaignToken>`
 
 ### Request Body Parameters
 
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
-CampaignToken | The token of the campaign which reports to retrieve
+campaignToken | string | The token of the campaign which reports to retrieve | true
 
 
 ## Report Errors
