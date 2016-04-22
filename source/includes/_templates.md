@@ -77,8 +77,8 @@ This endpoint retrieves a specific template.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 templateToken | The token of the template to retrieve
 
 
@@ -116,8 +116,8 @@ This endpoint updates a specific template.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 templateToken | The token of the template to update
 name | The name of the template
 content | Template content
@@ -157,8 +157,8 @@ This endpoint creates new template.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 templateToken | The token of the template to update
 name | The name of the template
 content | Template content
@@ -192,8 +192,8 @@ This endpoint deletes a specific template.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 templateToken | The token of the template to delete
 
 

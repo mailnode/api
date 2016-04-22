@@ -95,8 +95,8 @@ This endpoint retrieves a specific list.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list to retrieve
 
 
@@ -147,8 +147,8 @@ This endpoint updates a specific list.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list to update
 name | The name of the list
 default_from_name | Default sender name
@@ -206,8 +206,8 @@ This endpoint creates new list.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list to update
 name | The name of the list
 default_from_name | Default sender name

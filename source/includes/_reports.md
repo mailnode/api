@@ -116,8 +116,8 @@ This endpoint retrieves a specific Report.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 CampaignToken | The token of the campaign which reports to retrieve
 
 

@@ -48,8 +48,8 @@ This endpoint retrieves all members.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list of which members to retrieve
 
 ## Get a Specific Member
@@ -83,8 +83,8 @@ This endpoint retrieves a specific member.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list of which members to retrieve
 memberToken | The token of the member to retrieve
 
@@ -127,8 +127,8 @@ This endpoint updates a specific member.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list of which members to retrieve
 memberToken | The token of the member to retrieve
 first_name | The first name of the member
@@ -172,8 +172,8 @@ This endpoint creates new member.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list of which members to retrieve
 memberToken | The token of the member to retrieve
 first_name | The first name of the member
@@ -209,8 +209,8 @@ This endpoint deletes a specific member.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
 listToken | The token of the list of which members to retrieve
 memberToken | The token of the member to delete
 

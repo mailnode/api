@@ -147,9 +147,9 @@ This endpoint retrieves a specific campaign.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
-campaignToken | The token of the campaign to retrieve
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
+campaignToken | string | The token of the campaign to retrieve | true
 
 
 ## Update a Campaign
@@ -196,20 +196,17 @@ This endpoint updates a specific campaign.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
-campaignToken | The token of the campaign to update
-name | The name of the campaign
-template | Template token of new campaign
-list | List token of new campaign
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
-
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
+campaignToken | string | The token of the campaign to update | true
+name | string | The name of the campaign | true
+template | string | Template token of new campaign | false
+list | string | List token of new campaign | false
+subject | string | Subject text | true
+from_email | string | Sender email | true
+from_name | string | Sender name | true
+send_time_start | timestamp | Starting time of email sending | false
+send_time_end | timestamp | Starting time of email sending | false
 
 ## Create a Campaign
 
@@ -257,19 +254,17 @@ This endpoint creates new campaign.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
-name | The name of the campaign
-template | Template token of new campaign
-list | List token of new campaign
-subject | Subject text
-from_email| Sender email
-from_name | Sender name
-
-Optional Parameters | Description
-------------------- | -----------
-send_time_start | Starting time of email sending
-send_time_end |Starting time of email sending
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
+campaignToken | string | The token of the campaign to update | true
+name | string | The name of the campaign | true
+template | string | Template token of new campaign | true
+list | string | List token of new campaign | true
+subject | string | Subject text | true
+from_email | string | Sender email | true
+from_name | string | Sender name | true
+send_time_start | timestamp | Starting time of email sending | false
+send_time_end | timestamp | Starting time of email sending | false
 
 ## Delete a Campaign
 
@@ -299,9 +294,9 @@ This endpoint deletes a specific campaign.
 
 ### Request Body Parameters
 
-Parameter | Description
---------- | -----------
-campaignToken | The token of the campaign to delete
+Parameter | Type  | Description | Required
+--------- | ----- | ------------| --------
+campaignToken | string | The token of the campaign to delete | true
 
 
 ## Campaign Errors
