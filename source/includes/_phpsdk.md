@@ -47,6 +47,15 @@ MailNodeApp::getAllLists();
 
 This function retrieves all lists and returns an array of EmailList objects.
 
+### EmailList Properties
+
+Parameter | Type  | Description |
+--------- | ----- | ------------|
+token | string | The token of the list
+name | string | The name of the list
+default_from_name | string | Default sender name
+default_from_email | string | Default sender email
+
 ## Get All Members of the List
 
 ```php
@@ -63,6 +72,14 @@ This function retrieves all members of the list with token == $listToken and ret
 Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
 listToken | string | The token of the list which members to retrieve | true
+
+### Member Properties
+
+Parameter | Type  | Description |
+--------- | ----- | ------------|
+first_name | string | The first name of the member
+last_name | string | The last name of the member
+email | string | The email of the member
 
 ## Add New Member to the List
 
@@ -83,6 +100,14 @@ listToken | string | The token of the list where to add new member | true
 email | string | The email of the member | true
 first_name | string | The first name of the member | true
 last_name | string | The last name of the member | true
+
+### Member Properties
+
+Parameter | Type  | Description |
+--------- | ----- | ------------|
+first_name | string | The first name of the member
+last_name | string | The last name of the member
+email | string | The email of the member
 
 ## Create New Campaign
 
@@ -110,6 +135,18 @@ subject | string | Campaign subject | true
 from_email | string | Sender email | true
 from_name | string | Sender name | true
 
+### Campaign Properties
+
+Parameter | Type  | Description |
+--------- | ----- | ------------|
+token | string | The token of the campaign
+name | string | The name of the campaign
+template | string | Template token of new campaign
+list | string | List token of new campaign
+subject | string | Subject text
+from_email | string | Sender email
+from_name | string | Sender name
+
 ## Create New Template
 
 ```php
@@ -127,3 +164,11 @@ Parameter | Type  | Description | Required
 --------- | ----- | ------------| --------
 templateName | string | name of the template | true
 templateContent | string | template content | true
+
+### Template Properties
+
+Parameter | Type  | Description |
+--------- | ----- | ------------|
+token | string | The token of the template
+name | string | The name of the template
+content | string | Template content
