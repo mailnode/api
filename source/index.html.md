@@ -9,6 +9,7 @@ includes:
   - members
   - templates
   - reports
+  - phpsdk
 
 search: true
 ---
